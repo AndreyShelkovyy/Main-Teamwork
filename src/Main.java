@@ -15,7 +15,7 @@ public class Main {
         int productCount = 0;
         while (true) {
             System.out.println("Выберите товар и количество или введите 'end'");
-            String = scanner.nextLine();
+            String input = scanner.nextLine();
             if (input.equals("end")) {
                 break;
             }
@@ -35,27 +35,20 @@ public class Main {
                 if (productCount == 0) {
                     amountProduct[productNumber] = 0;
                 }
-                // System.out.println("Вы ввели отрицательное количество продукта, надо > 0");
-                // continue;
-                //}
             } catch (NumberFormatException e) {
                 System.out.println("Ошибка ввода символов, надо цифрами вводить");
                 continue;
             }
-
-            // текущая цена на товар
             amountProduct[productNumber] += productCount; // сумма введеного кол. продукта
         }
-
-        //int currentPrice = prices[productNumber];
 
         for (int i = 0; i < products.length; i++) {
             if (amountProduct[i] < 0) {
                 amountProduct[i] = 0;
             }
             int sumP = amountProduct[i] * prices[i]; // цена за один вид товара
-            sumProducts += sumP;
-        }// цена за все товары
+            sumProducts += sumP; // цена за все товары
+        }
 
         System.out.println("Ваша корзина:");
         for (int i = 0; i < products.length; i++) {
