@@ -57,7 +57,7 @@ public class Main {
                 sumProducts += sumP; // общая цена
             }
         }
-        System.out.println("Ваша корзина:");
+        System.out.println("Ваша корзина: ");
         for (int i = 0; i < products.length; i++) {
             if (amountProduct[i] != 0) {
                 System.out.println(products[i] + " "
